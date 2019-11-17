@@ -4,21 +4,22 @@ My first real usefull homebrew app for the Nintendo Switch.
 Click [here](https://youtu.be/uMz1vgSuQ2g) Video clip showing it in action.  
 
 ## Uses: 
-this simpel application will.   
--  Install/update uLaunch.  
+```this simpel application will.   
+- Install/update uLaunch.  
 - Remove uLaunch.  
 - Install extra Themes.  
--  In app update.  
+- In app update.  
 - Reboot to payload.  
-   
+```
+
 ## uLaunch Screenshot (icon):  
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/inHB_App.jpg?raw=true)  .
 When uLaunch came out I was very excited to try it out, it looks very promising like the design.  
 Open source and I guess there will be loads of new features in the future.  
 
-
-But it's still in beta 0.1 so its not realy stable, not that I found breaking bugs.  
- 
+```
+But it's still in beta 0.1 so its not realy stable, not that I found breaking bugs.   
+```
  
 So I wanted a easy way to remove it and re-install it without re-ftp or sdswap.  
 Started my journey in to Switch develepment just this month and I really like the progress I made.  
@@ -72,6 +73,16 @@ and create and place in your /switch/Ulaunch-update/ folder.
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/folder.png?raw=true)  
 And then your done.  
 
+# Themes:
+Some example screenshots of [KarmicBacklash](https://github.com/KarmicBacklash/uLaunchThemes) Themes.   
+  
+Red.   
+![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/redtheme.jpg?raw=true)  
+  
+Minty Green.  
+![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Mintgreentheme.jpg?raw=true)  
+  
+  
 # Todo:
 - Remove /SDout/ folder after installation. (folder is empty) just need to remove the folder.  
 - Give names of references a logic name in the code.
