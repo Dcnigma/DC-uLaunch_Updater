@@ -10,14 +10,16 @@ This simpel application will:
 - In app update.
 - Reboot to payload.
  
-Main Screenshot:  
+uLaunch Screenshot (icon):  
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/inHB_App.jpg?raw=true)
-
-When uLaunch came out I was very excited to try it out, it looks very promising.
+When uLaunch came out I was very excited to try it out, it looks very promising.  
 Like the design:  
+.  
+.  
+.   
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Main.jpg?raw=true)
-  
 But it's still in beta 0.1 so its not realy stable, not that I found breaking bugs.  
 
+I like to make it as easy as possible for me so I de
 
 
