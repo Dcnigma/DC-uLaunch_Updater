@@ -71,7 +71,7 @@ This is very simple just
 download the [DC-uLaunch_Updater.nro](https://github.com/Dcnigma/DC-uLaunch_Updater/raw/master/DC-uLaunch_Updater.nro)  
 and create and place in your /switch/Ulaunch-update/ folder.  
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/folder.png?raw=true)  
-And then your done.  
+And then your done launch from HBmenu or uLaunch.  
 
 # Themes:
 Some example screenshots of [KarmicBacklash](https://github.com/KarmicBacklash/uLaunchThemes) Themes.   
@@ -81,8 +81,10 @@ Red.
   
 Minty Green.  
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Mintgreentheme.jpg?raw=true)  
-  
-  
+ 
+# Warning this is only for Atmosphere CFW!  
+  Install will not work on other CFW!
+ 
 # Todo:
 - Remove /SDout/ folder after installation. (folder is empty) just need to remove the folder.  
 - Give names of references a logic name in the code.
