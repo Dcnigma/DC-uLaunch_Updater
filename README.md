@@ -62,7 +62,7 @@ Like the screenshot says use Reboot Payload to do restart in to uLaunch.
 ## Homebrew Menu launch icon corrupt.
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/hblaunch.jpg?raw=true)  
   
-Like you can see the Icon shows "?" because I used a icon.png and not icon.jpg.  
+Like you can see the Icon shows "!" because I used a icon.png and not icon.jpg.  
 In uLauch my png icon is showing correct but not in Homebrew Menu
  
  
