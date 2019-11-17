@@ -4,14 +4,14 @@ My first real usefull homebrew app for the Nintendo Switch.
 
 # Uses: 
 this simpel application will
-    - Install/update uLaunch.
-    - Remove uLaunch.
-    - Install extra Themes.
-    - In app update.
-    - Reboot to payload.
-  
+    - Install/update uLaunch.  
+    - Remove uLaunch.  
+    - Install extra Themes.  
+    - In app update.  
+    - Reboot to payload.  
+   
 uLaunch Screenshot (icon):  
-![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/inHB_App.jpg?raw=true)
+![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/inHB_App.jpg?raw=true)  .
 When uLaunch came out I was very excited to try it out, it looks very promising like the design.  
 Open source and I guess there will be loads of new features in the future.  
 
@@ -26,25 +26,29 @@ Here are some screenshots:
 # Main Menu:
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Main.jpg?raw=true).  
  
+# Download:  
+![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Downloading.jpg?raw=true).  
+
+Nice progress menu.  
  
 # Install complete!
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Installcomp.jpg?raw=true).  
- 
- Download:  
-![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Downloading.jpg?raw=true).  
- 
- 
+
+like screenshot say's use Reboot Payload to do restart in to uLaunch.
+  
 # De-Intsall!
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/De-install.jpg?raw=true).  
    
-De-Install complete:
+# De-Install complete:
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/deinstallcomp.jpg?raw=true). 
- 
+
+like screenshot say's use Reboot Payload to do restart in to uLaunch.  
+
  
 # Install Extra Themes!
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/getthemes.jpg?raw=true).  
  
- Will appeare directly after closing app.  
+ Themes will appeare directly after closing app in uLauch theme selector.  
  You need to restart uLaunch to apply the theme.  
  Use Reboot Payload to do so.  
  
