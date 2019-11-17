@@ -55,7 +55,13 @@ Like the screenshot says use Reboot Payload to do restart in to uLaunch.
  Themes will appeare directly after closing app in uLauch theme selector.  
  You need to restart uLaunch to apply the theme.  
  Use Reboot Payload to do so.  
- 
+
+## Disable or Enable uLaunch!
+ ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Offlinemodes.jpg?raw=true
+Disable or Enable uLaunch without deleting it.
+Title folders will be moved except for 0100000000001000 only the exefs.nsp file will be moved.  
+And as bonus Included all Themes that are in the Showcase.
+  
 ## In App Update!
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Update_app.jpg?raw=true)  
  Just restart after download and if there is a new version this one will be started. 
