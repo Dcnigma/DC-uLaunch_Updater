@@ -1,6 +1,6 @@
 # DC uLaunch Updater
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/icon.png?raw=true)  
-My first real usefull homebrew app for the Nintendo Switch.  
+My first real useful homebrew app for the Nintendo Switch.  
 Click [here](https://youtu.be/uMz1vgSuQ2g) Video clip showing it in action.  
 
 ## Uses: 
