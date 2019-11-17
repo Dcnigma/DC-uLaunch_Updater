@@ -4,14 +4,15 @@ My first real useful homebrew app for the Nintendo Switch.
 Click [here](https://youtu.be/uMz1vgSuQ2g) Video clip showing it in action.  
 
 ## Added offline modes.
-Now you can Disable or Enable uLaunch without deleting it.
+Now you can Disable or Enable uLaunch without deleting it.  
 Title folders will be moved except for 0100000000001000 only the exefs.nsp file will be moved.
 
 ## Uses: 
 ```this simpel application will.   
 - Install/update uLaunch.  
 - Remove uLaunch.  
-- Install extra Themes.  
+- Install extra Themes. 
+- Disable or Enable uLaunch.
 - In app update.  
 - Reboot to payload.  
 ```
@@ -56,8 +57,8 @@ Like the screenshot says use Reboot Payload to do restart in to uLaunch.
  You need to restart uLaunch to apply the theme.  
  Use Reboot Payload to do so.  
 
-## Disable or Enable uLaunch!
- ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Offlinemodes.jpg?raw=true
+## Disable or Enable uLaunch!  
+![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Offlinemodes.jpg?raw=true)  
 Disable or Enable uLaunch without deleting it.
 Title folders will be moved except for 0100000000001000 only the exefs.nsp file will be moved.  
 And as bonus Included all Themes that are in the Showcase.
