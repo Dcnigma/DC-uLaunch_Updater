@@ -8,8 +8,8 @@
 #define APP_OUTPUT              "/switch/Ulaunch-update/DC-uLaunch_Updater.nro"
 #define OLD_APP_PATH            "/switch/DC-uLaunch_Updater.nro"
 //Remove ebook in clean up!
-#define EBOOK_OUTPUT		         "/switch/DC-Switch/ebook.zip"
-
+#define EBOOK_OUTPUT		        "/switch/DC-Switch/ebook.zip"
+#define BACKUP_OUTPUT           "/atmosphere/Title/"
 
 
 
@@ -25,9 +25,11 @@ char *getAmsVersion();                                                  // retur
 
 void copyFile(char *src, char *dest);                                   // basic copy file. Use malloc if you need dynamic mem
 int parseSearch(char *phare_string, char *filter, char* new_string);    // hacky way to parse a file for a string
-int update_dcapps(char *url, char *output, int mode);               	// update either ams or hekate
-int update_ebooks(char *url, char *output, int mode);               	// update either ams or hekate
-int update_amiibo(char *url, char *output, int mode);               	// update either amiibo
+int update_dcapps(char *url, char *output, int mode);               	  // update either ams or hekate
+int update_ebooks(char *url, char *output, int mode);               	  // update either ams or hekate
+int update_amiibo(char *url, char *output, int mode);               	  // update either amiibo
+void disable_app();                                                     // disable_app ulaunch offline
+void Enable_app();                                                      // Enable_app ulaunch offline
 void update_app();                                                      // update the app
 
 #endif

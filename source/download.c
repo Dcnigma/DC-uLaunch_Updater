@@ -17,6 +17,7 @@ struct MemoryStruct
   int mode;
 };
 
+
 static size_t write_memory_callback(void *contents, size_t size, size_t nmemb, void *userdata)
 {
   size_t realsize = size * nmemb;
@@ -26,15 +27,14 @@ static size_t write_memory_callback(void *contents, size_t size, size_t nmemb, v
 
   if (ptr == NULL)
   {
-      errorBox(350, 250, "Failed to realloc mem");
+      errorBox(350, 250, "Failed to realloc mem/n not enough memory");
       return 0;
   }
- 
   mem->memory = ptr;
   memcpy(&(mem->memory[mem->size]), contents, realsize);
   mem->size += realsize;
   mem->memory[mem->size] = 0;
- 
+
   return realsize;
 }
 
@@ -71,7 +71,7 @@ int downloadFile(const char *url, const char *output, int api_mode)
         if (fp)
         {
             struct MemoryStruct chunk;
-            chunk.memory = malloc(1);
+            chunk.memory = malloc(2);
             chunk.size = 0;
 
             curl_easy_setopt(curl, CURLOPT_URL, url);

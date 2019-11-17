@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 #include <switch.h>
-
 #include "util.h"
 #include "menu.h"
 #include "unzip.h"
 #include "download.h"
 #include "reboot_payload.h"
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
+//need ftw for switch :-D
+//#include <ftw.h>
 
 #define TEMP_FILE               "/switch/Ulaunch-update/temp.zip"
 #define FILTER_STRING           "browser_download_url\":\""
@@ -171,19 +175,25 @@ rename("/SdOut/titles/0100000000001000/exefs.nsp","/atmosphere/titles/0100000000
 rename("/SdOut/titles/0100000000001001/exefs.nsp","/atmosphere/titles/0100000000001001/exefs.nsp");
 //end copy uLauch
 //cleanup content of zip (still manual)
-// remove("/SdOut/titles/01008BB00013C000/exefs.nsp");
-// remove("/SdOut/titles/01008BB00013C000");
-// remove("/SdOut/titles/010000000000100B/exefs.nsp");
-// remove("/SdOut/titles/010000000000100B/fsmitm.flag");
-// remove("/SdOut/titles/010000000000100B/romfs.bin");
-// remove("/SdOut/titles/010000000000100B");
-// remove("/SdOut/titles/0100000000001000/exefs.nsp");
-// remove("/SdOut/titles/0100000000001000");
-// remove("/SdOut/titles/0100000000001001/exefs.nsp");
-// remove("/SdOut/titles/0100000000001001");
-// remove("/SdOut/titles/");
-// remove("/SdOut/");
+ remove("/SdOut/titles/01008BB00013C000/exefs.nsp");
+ remove("/SdOut/titles/0100000000001000/exefs.nsp");
+ remove("/SdOut/titles/0100000000001001/exefs.nsp");
+ remove("/SdOut/titles/010000000000100B/exefs.nsp");
+ remove("/SdOut/titles/010000000000100B/fsmitm.flag");
+ remove("/SdOut/titles/010000000000100B/romfs.bin");
+// Remove can't remove folders. (need to check NX-Shell how to do that)
+//FS_RemoveDirRecursive("/SdOut");
+//BOOL RemoveDirectory( LPCTSTR "/SdOut" );
+system("rm -r /SdOut");
+rmdir("/SdOut/titles/0100000000001000");
+rmdir("/SdOut/titles/01008BB00013C000");
+rmdir("/SdOut/titles/010000000000100B");
+rmdir("/SdOut/titles/0100000000001001");
+rmdir("/SdOut/titles");
+rmdir("/SdOut");
+
 //end cleanup ulaunch zip
+
 
 errorBox(400, 250, "Install/Update complete!\nRestart Payload to take effect");
 
@@ -216,12 +226,12 @@ int update_amiibo(char *url, char *output, int mode)
     if (mode == UP_HEKATE)
     {
         // ask if user wants to install atmosphere as well.
-        int res = yesNoBox(mode, 390, 250, "Install Dcnigma's Theme?");
+        int res = yesNoBox(mode, 390, 250, "Install All Themes?");
 
         if (res == YES)
         {
             // ask if user wants to overwite the atmosphere ini files.
-            res = yesNoBox(mode, 355, 250, "Overwite Dcnigma's Theme?");
+            res = yesNoBox(mode, 355, 250, "Will overwite older themes?");
 
             if (res == YES)
             {
@@ -230,8 +240,12 @@ int update_amiibo(char *url, char *output, int mode)
     {
 	rename(TEMP_FILE, HEKATE_OUTPUT);
         unzip(HEKATE_OUTPUT, mode);
-	remove(MAC_OUTPUT);
-
+          {
+	if (!downloadFile(THEME_URL2, TEMP_FILE, OFF))
+  rename(TEMP_FILE, HEKATE_OUTPUT);
+        unzip(HEKATE_OUTPUT, mode);
+system("rm -rf /__MACOSX");
+rmdir("__MACOSX");
                 }
                 return 0;
             }
@@ -240,7 +254,63 @@ int update_amiibo(char *url, char *output, int mode)
         return 1;
     }
     return 1;
+  }
+return 1;
 }
+void disable_app(char *url, char *output, int mode)
+{
+  if (mode == OFFLINE_MODE)
+  {
+      // ask if user wants to install atmosphere as well.
+      int res = yesNoBox(mode, 390, 250, "Disable uLaunch?\nMake Off-line Backup!");
+    //  errorBox(400, 250, "      Enabled!\nReboot payload to take effect");
+
+      if (res == YES)
+      {
+        //RENAME System application (SystemApplicationQHbTarget)
+        rename("/atmosphere/titles/01008BB00013C000","/atmosphere/titles/01008BB00013C000BAK");
+        //RENAME QMenu (LibraryAppletQMenu)
+        rename("/atmosphere/titles/010000000000100B","/atmosphere/titles/010000000000100BBAK");
+        //RENAME QDaemon (SystemAppletQDaemon)
+        // create Backup folder otherwise blue atmosphere screen of death
+        mkdir("/atmosphere/titles/0100000000001000BAK", 0700);
+        rename("/atmosphere/titles/0100000000001000/exefs.nsp","/atmosphere/titles/0100000000001000BAK/exefs.nsp");
+        //RENAME Library applet (LibraryAppletQHbTarget)
+        rename("/atmosphere/titles/0100000000001001","/atmosphere/titles/0100000000001001BAK");
+        //end copy uLauch
+        errorBox(400, 250, "Disabled!\nReboot payload to take effect");
+        {
+
+}
+//return 0;
+}
+//return 0;
+}
+}
+void Enable_app(char *url, char *output, int mode)
+{
+  if (mode == OFFLINE_MODE)
+  {
+      // ask if user wants to install atmosphere as well.
+      int res = yesNoBox(mode, 390, 250, "Enable uLaunch?\nFrom Off-line Backup?");
+    //  errorBox(400, 250, "      Enabled!\nReboot payload to take effect");
+
+          if (res == YES)
+          {
+            rename("/atmosphere/titles/01008BB00013C000BAK","/atmosphere/titles/01008BB00013C000");
+            //RENAME QMenu (LibraryAppletQMenu)
+            rename("/atmosphere/titles/010000000000100BBAK","/atmosphere/titles/010000000000100B");
+            //RENAME QDaemon (SystemAppletQDaemon)
+            rename("/atmosphere/titles/0100000000001000BAK/exefs.nsp","/atmosphere/titles/0100000000001000/exefs.nsp");
+            //RENAME Library applet (LibraryAppletQHbTarget)
+            rename("/atmosphere/titles/0100000000001001BAK","/atmosphere/titles/0100000000001001");
+            //end copy uLauch
+            errorBox(400, 250, "Enabled!\nReboot payload to take effect");
+          }
+//return 0;
+        }
+
+      }
 
 void update_app()
 {
@@ -254,6 +324,7 @@ void update_app()
         // rename the downloaded temp_file with the correct nro name.
         rename(TEMP_FILE, APP_OUTPUT);
         // using errorBox as a message window on this occasion.
-        errorBox(400, 250, "      Update complete!\nRestart app to take effect");
+        errorBox(400, 250, "Update complete!\nRestart app to take effect");
     }
+
 }

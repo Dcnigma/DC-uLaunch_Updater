@@ -5,7 +5,7 @@
 #include "touch.h"
 #include "util.h"
 
-#define APP_VERSION "uLaunch Updater: 0.0.4"
+#define APP_VERSION "uLaunch Updater: 0.0.5"
 #define UL_VERSION "uLaunch version: 0.1"
 
 void refreshScreen()
@@ -35,17 +35,19 @@ void printOptionList(int cursor)
 
     char *option_list[]      = {    "Install uLaunch?", \
                                     "De-Install uLaunch", \
-                                    "Get KarmicBacklash uLaunch Themes's", \
+                                    "Get uLaunch Themes-showcase (discord)", \
+                                    "Disable or Enabled Offline mode", \
                                     "Update app", \
                                     "Reboot (reboot to payload)" };
 
     char *description_list[] = {    "Warning this is for Atmosphere!", \
                                     "De-Install uLaunch for Atmosphere!", \
-                                    "Get KarmicBacklash Themes for uLaunch", \
+                                    "Get All Themes for uLaunch (Updated 11-17-19)", \
+                                    "Disable or Enabled Offline mode", \
                                     "Update app and removes old version", \
                                     "Reboots switch (recommended after updating or De-install)" };
-
-    SDL_Texture *textureArray[] = { ams_icon, ams_plus_icon, hekate_icon, app_icon, reboot_icon };
+//Add
+    SDL_Texture *textureArray[] = { ams_icon, ams_plus_icon, hekate_icon, offline_icon, app_icon, reboot_icon };
 
     for (int i=0, nl=0; i < (CURSOR_LIST_MAX+1); i++, nl+=NEWLINE)
     {

@@ -2,12 +2,12 @@
 #define _MENU_H_
 
 #include "sdl.h"
-
-#define CURSOR_LIST_MAX     4
+//option_list
+#define CURSOR_LIST_MAX     5
 #define HIGHLIGHT_BOX_MIN   20
 #define HIGHLIGHT_BOX_MAX   70
-#define NEWLINE             110
-#define FIRST_LINE          130
+#define NEWLINE             80
+#define FIRST_LINE          100
 #define MAX_STRLEN          512
 
 void refreshScreen(void);                                                   // clear screen, display background with title

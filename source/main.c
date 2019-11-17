@@ -107,17 +107,25 @@ int main(int argc, char **argv)
             switch (cursor)
             {
             case UP_AMS:
-                if (yesNoBox(cursor, 390, 250, "Install uLaunch?") == YES)
+                if (yesNoBox(cursor, 390, 250, "Install uLaunch ver 0.1 (online)?") == YES)
                     update_dcapps(AMS_URL, AMS_OUTPUT, cursor);
                 break;
-//Ebookurl is empty not used.
+            //Ebookurl is empty not used.
             case UP_AMS_NOINI:
                 if (yesNoBox(cursor, 390, 250, "De-Install uLaunch?") == YES)
                     update_ebooks(EBOOK_URL, EBOOK_OUTPUT, cursor);
                 break;
-
+            case OFFLINE_MODE:
+                if (yesNoBox(cursor, 390, 250, "Do you want to Disable\nUlaunch?") == YES){
+                disable_app(OFFLINE_MODE, BACKUP_OUTPUT, cursor);
+                break;
+                //NO?
+                } else {
+                  if (yesNoBox(cursor, 390, 250, "Do you want to Enable\nfrom backup Ulaunch?") == YES){
+                Enable_app(OFFLINE_MODE, BACKUP_OUTPUT, cursor);
+                break;
             case UP_HEKATE:
-                if (yesNoBox(cursor, 390, 250, "Install Dcnigma's Theme?") == YES)
+                if (yesNoBox(cursor, 390, 250, "Install All uLaunch Themes?") == YES)
                     update_amiibo(HEKATE_URL, HEKATE_OUTPUT, cursor);
                 break;
 
@@ -130,6 +138,7 @@ int main(int argc, char **argv)
                 if (yesNoBox(cursor, 390, 250, "Reboot to Payload?") == YES)
                     reboot_payload("/atmosphere/reboot_payload.bin");
                 break;
+              }}
             }
         }
 
