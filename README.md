@@ -3,6 +3,10 @@
 My first real useful homebrew app for the Nintendo Switch.  
 Click [here](https://youtu.be/uMz1vgSuQ2g) Video clip showing it in action.  
 
+## Added offline modes.
+Now you can Disable or Enable uLaunch without deleting it.
+Title folders will be moved except for 0100000000001000 only the exefs.nsp file will be moved.
+
 ## Uses: 
 ```this simpel application will.   
 - Install/update uLaunch.  
