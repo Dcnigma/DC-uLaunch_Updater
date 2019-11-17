@@ -59,6 +59,11 @@ Like the screenshot say's use Reboot Payload to do restart in to uLaunch.
 ## Reboot to Payload!
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/rebootpayloadbox.jpg?raw=true).  
 
+## Homebrew Menu launch icon corrupt.
+![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/hblaunch.jpg?raw=true).  
+  
+Like you can see the Icon shows "?" because I used a icon.png and not icon.jpg.  
+In uLauch my png icon is showing correct but not in Homebrew Menu
  
  
 # Installation:
@@ -71,3 +76,4 @@ And then your done.
 # Todo:
 - Remove /SDout/ folder after installation. (folder is empty) just need to remove the folder.  
 - Give names of references a logic name in the code.
+- Decide if will use a png icon or not.
