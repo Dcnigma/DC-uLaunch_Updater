@@ -91,3 +91,5 @@ Only tested it on my Switch so I don't take responsibility if something happens 
 - Give names of references a logic name in the code.
 - Decide if will use a png icon or not.
 - Give propper credits to everyone in README.md
+- Clean up MACOS_ folders that are created by unzipping. (or upload only cleaned zips)
+
