@@ -43,7 +43,7 @@ Like the screenshot says use Reboot Payload to do restart in to uLaunch.
    
 ## De-Install complete:
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/deinstallcomp.jpg?raw=true) 
-This will only De-Install the Title's not the users saved information at ''/uLaunch/''
+This will only De-Install the Titles, not the users information at ''/uLaunch/'' Themes will not be deleted.  
 Like the screenshot says use Reboot Payload to do restart in to uLaunch.  
  
 ## Install Extra Themes!
