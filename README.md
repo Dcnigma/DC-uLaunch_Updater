@@ -83,8 +83,9 @@ Minty Green.
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Mintgreentheme.jpg?raw=true)  
  
 # Warning this is only for Atmosphere CFW!  
-  Install will not work on other CFW!
- 
+Install will not work on other CFW!
+Only tested it on my Switch so I don't take responsibility if something happens to your switch.
+
 # Todo:
 - Remove /SDout/ folder after installation. (folder is empty) just need to remove the folder.  
 - Give names of references a logic name in the code.
