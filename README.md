@@ -1,14 +1,15 @@
 # DC uLaunch Updater
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/icon.png?raw=true)  
 My first real usefull homebrew app for the Nintendo Switch.
+Click [here](https://youtu.be/uMz1vgSuQ2g) Video clip showing it in action.  
 
 ## Uses: 
 this simpel application will.   
-    - Install/update uLaunch.  
-    - Remove uLaunch.  
-    - Install extra Themes.  
-    - In app update.  
-    - Reboot to payload.  
+-  Install/update uLaunch.  
+- Remove uLaunch.  
+- Install extra Themes.  
+-  In app update.  
+- Reboot to payload.  
    
 ## uLaunch Screenshot (icon):  
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/inHB_App.jpg?raw=true)  .
@@ -34,7 +35,7 @@ Nice progress menu.
 ## Install complete!
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/Installcomp.jpg?raw=true).  
 
-like screenshot say's use Reboot Payload to do restart in to uLaunch.
+Like the screenshot say's use Reboot Payload to do restart in to uLaunch.
   
 ## De-Intsall!
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/De-install.jpg?raw=true).  
@@ -42,8 +43,7 @@ like screenshot say's use Reboot Payload to do restart in to uLaunch.
 ## De-Install complete:
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/deinstallcomp.jpg?raw=true). 
 
-like screenshot say's use Reboot Payload to do restart in to uLaunch.  
-
+Like the screenshot say's use Reboot Payload to do restart in to uLaunch.  
  
 ## Install Extra Themes!
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/getthemes.jpg?raw=true).  
@@ -60,12 +60,14 @@ like screenshot say's use Reboot Payload to do restart in to uLaunch.
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/rebootpayloadbox.jpg?raw=true).  
 
  
-## Installation:
+ 
+# Installation:
 This is very simple just
-download the [DC-uLaunch_Updater.nro](https://github.com/Dcnigma/DC-uLaunch_Updater/raw/master/DC-uLaunch_Updater.nro) and create and place in your /switch/Ulaunch-update/ folder.  
+download the [DC-uLaunch_Updater.nro](https://github.com/Dcnigma/DC-uLaunch_Updater/raw/master/DC-uLaunch_Updater.nro)  
+and create and place in your /switch/Ulaunch-update/ folder.  
 ![alt text](https://github.com/Dcnigma/DC-uLaunch_Updater/blob/master/Screenshots/folder.png?raw=true).  
 And then your done.  
 
-## Todo:
+# Todo:
 - Remove /SDout/ folder after installation. (folder is empty) just need to remove the folder.  
 - Give names of references a logic name in the code.
