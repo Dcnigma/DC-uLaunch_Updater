@@ -164,14 +164,18 @@ int update_dcapps(char *url, char *output, int mode)
 //  AMS_OUTPUTZIP    "/SdOut/titles/"
 //copy uLauch
 //System application (SystemApplicationQHbTarget)
+mkdir("/atmosphere/titles/01008BB00013C000", 0700);
 rename("/SdOut/titles/01008BB00013C000/exefs.nsp","/atmosphere/titles/01008BB00013C000/exefs.nsp");
 //QMenu (LibraryAppletQMenu)
+mkdir("/atmosphere/titles/010000000000100B", 0700);
 rename("/SdOut/titles/010000000000100B/exefs.nsp","/atmosphere/titles/010000000000100B/exefs.nsp");
 rename("/SdOut/titles/010000000000100B/fsmitm.flag","/atmosphere/titles/010000000000100B/fsmitm.flag");
 rename("/SdOut/titles/010000000000100B/romfs.bin","/atmosphere/titles/010000000000100B/romfs.bin");
 //QDaemon (SystemAppletQDaemon)
+mkdir("/atmosphere/titles/0100000000001000", 0700);
 rename("/SdOut/titles/0100000000001000/exefs.nsp","/atmosphere/titles/0100000000001000/exefs.nsp");
 //Library applet (LibraryAppletQHbTarget)
+mkdir("/atmosphere/titles/0100000000001001", 0700);
 rename("/SdOut/titles/0100000000001001/exefs.nsp","/atmosphere/titles/0100000000001001/exefs.nsp");
 //end copy uLauch
 //cleanup content of zip (still manual)
