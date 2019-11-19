@@ -98,7 +98,7 @@ Install will not work on other CFW!
 Only tested it on my Switch so I don't take responsibility if something happens to your switch.
 
 # Todo:
-- Remove /SDout/ folder after installation. (folder is empty) just need to remove the folder.  
+- Remove /SDout/ folder after installation. (folder is empty) just need to remove the folder. (fixed).   
 - Give names of references a logic name in the code.
 - Decide if will use a png icon or not.
 - Give propper credits to everyone in README.md
