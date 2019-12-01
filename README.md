@@ -8,9 +8,9 @@ Click [here](https://youtu.be/uMz1vgSuQ2g) Video clip showing it in action.
 Needed to make a update for v 0.2 new download link.
 And test the update function, and yes it needed to be adjust. But its working fine now!
 Use the in app update function if you have it or download it from the release   
-<img src="Screenshots/s8.jpg" alt="drawing" width="400"/> <img src="Screenshots/s9.jpg" alt="drawing" width="400"/>  
+<img src="Screenshots/s10.jpg" alt="drawing" width="400"/> <img src="Screenshots/s8.jpg" alt="drawing" width="400"/>  
 
-<img src="Screenshots/s10.jpg" alt="drawing" width="400"/> <img src="Screenshots/S11.jpg" alt="drawing" width="400"/>  
+<img src="Screenshots/s9.jpg" alt="drawing" width="400"/> <img src="Screenshots/S11.jpg" alt="drawing" width="400"/>  
 
 Also updated the skins and no more MACOS__ folders!
 
