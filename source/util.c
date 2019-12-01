@@ -20,13 +20,14 @@
 #define TITLE01                 "/atmosphere/titles/01008BB00013C000/exefs.nsp"
 //QMenu (LibraryAppletQMenu)
 #define TITLE02                 "/atmosphere/titles/010000000000100B/exefs.nsp"
+#define TITLE05                 "/atmosphere/titles/010000000000100B/romfs.bin"
+#define TITLE06                 "/atmosphere/titles/010000000000100B/fsmitm.flag"
 //QDaemon (SystemAppletQDaemon)
 #define TITLE03                 "/atmosphere/titles/0100000000001000/exefs.nsp"
 //Library applet (LibraryAppletQHbTarget)
 //Delete only the exefs.nsp file from 0100000000001000 directory
 //(if there is a romfs folder present it could be a normal HOME menu theme)
 #define TITLE04                 "/atmosphere/titles/0100000000001001/exefs.nsp"
-
 char g_sysVersion[50];
 char g_amsVersion[50];
 
@@ -158,43 +159,59 @@ int update_dcapps(char *url, char *output, int mode)
 //AMS_URL= TitleUpdate.zip
     if (!downloadFile(AMS_URL, TEMP_FILE, OFF))
     {
-	rename(TEMP_FILE, AMS_OUTPUT);
-  // AMS_OUTPUT              "/atmosphere/TitleUpdate.zip"
-        unzip(AMS_OUTPUT, mode);
+//##Uninstalling
+      //Make sure you don't remove anything else but the stuff mentioned here, in order to avoid any potential trouble!
+      //Remove 0100000000001001, 010000000000100B and 01008BB00013C000 folders from your CFW's titles folder.
+      //Remove ONLY the exefs.nsp file from 0100000000001000 folder inside titles (there might be a romfs folder, which could be a
+      //normal HOME menu theme/NXTheme)
+//###(Optional)
+      //if you wish to completely remove uLaunch, you can make a full reset by removing the ulaunch folder
+      //in SD root. Note that this will remove any folders or special entries/homebrew added to main menu!
+      //(only the accesses, not the homebrew itself)
+//Remove titles before install. otherwise update will not work.
+      remove(TITLE01);
+      remove(TITLE02);
+      remove(TITLE03);
+      remove(TITLE04);
+      remove(TITLE05);
+      remove(TITLE06);
+	    rename(TEMP_FILE, AMS_OUTPUT);
+// AMS_OUTPUT              "/atmosphere/TitleUpdate.zip"
+      unzip(AMS_OUTPUT, mode);
 //  AMS_OUTPUTZIP    "/SdOut/titles/"
-//copy uLauch
+    //copy uLauch
 //System application (SystemApplicationQHbTarget)
-mkdir("/atmosphere/titles/01008BB00013C000", 0700);
-rename("/SdOut/titles/01008BB00013C000/exefs.nsp","/atmosphere/titles/01008BB00013C000/exefs.nsp");
+      mkdir("/atmosphere/titles/01008BB00013C000", 0700);
+      rename("/titles/01008BB00013C000/exefs.nsp","/atmosphere/titles/01008BB00013C000/exefs.nsp");
 //QMenu (LibraryAppletQMenu)
-mkdir("/atmosphere/titles/010000000000100B", 0700);
-rename("/SdOut/titles/010000000000100B/exefs.nsp","/atmosphere/titles/010000000000100B/exefs.nsp");
-rename("/SdOut/titles/010000000000100B/fsmitm.flag","/atmosphere/titles/010000000000100B/fsmitm.flag");
-rename("/SdOut/titles/010000000000100B/romfs.bin","/atmosphere/titles/010000000000100B/romfs.bin");
+      mkdir("/atmosphere/titles/010000000000100B", 0700);
+      rename("/titles/010000000000100B/exefs.nsp","/atmosphere/titles/010000000000100B/exefs.nsp");
+      rename("/titles/010000000000100B/fsmitm.flag","/atmosphere/titles/010000000000100B/fsmitm.flag");
+      rename("/titles/010000000000100B/romfs.bin","/atmosphere/titles/010000000000100B/romfs.bin");
 //QDaemon (SystemAppletQDaemon)
-mkdir("/atmosphere/titles/0100000000001000", 0700);
-rename("/SdOut/titles/0100000000001000/exefs.nsp","/atmosphere/titles/0100000000001000/exefs.nsp");
+      mkdir("/atmosphere/titles/0100000000001000", 0700);
+      rename("/titles/0100000000001000/exefs.nsp","/atmosphere/titles/0100000000001000/exefs.nsp");
 //Library applet (LibraryAppletQHbTarget)
-mkdir("/atmosphere/titles/0100000000001001", 0700);
-rename("/SdOut/titles/0100000000001001/exefs.nsp","/atmosphere/titles/0100000000001001/exefs.nsp");
+      mkdir("/atmosphere/titles/0100000000001001", 0700);
+      rename("/titles/0100000000001001/exefs.nsp","/atmosphere/titles/0100000000001001/exefs.nsp");
 //end copy uLauch
 //cleanup content of zip (still manual)
- remove("/SdOut/titles/01008BB00013C000/exefs.nsp");
- remove("/SdOut/titles/0100000000001000/exefs.nsp");
- remove("/SdOut/titles/0100000000001001/exefs.nsp");
- remove("/SdOut/titles/010000000000100B/exefs.nsp");
- remove("/SdOut/titles/010000000000100B/fsmitm.flag");
- remove("/SdOut/titles/010000000000100B/romfs.bin");
+      remove("/titles/01008BB00013C000/exefs.nsp");
+      remove("/titles/0100000000001000/exefs.nsp");
+      remove("/titles/0100000000001001/exefs.nsp");
+      remove("/titles/010000000000100B/exefs.nsp");
+      remove("/titles/010000000000100B/fsmitm.flag");
+      remove("/titles/010000000000100B/romfs.bin");
 // Remove can't remove folders. (need to check NX-Shell how to do that)
 //FS_RemoveDirRecursive("/SdOut");
 //BOOL RemoveDirectory( LPCTSTR "/SdOut" );
-system("rm -r /SdOut");
-rmdir("/SdOut/titles/0100000000001000");
-rmdir("/SdOut/titles/01008BB00013C000");
-rmdir("/SdOut/titles/010000000000100B");
-rmdir("/SdOut/titles/0100000000001001");
-rmdir("/SdOut/titles");
-rmdir("/SdOut");
+      system("rm -r /SdOut");
+      rmdir("/titles/0100000000001000");
+      rmdir("/titles/01008BB00013C000");
+      rmdir("/titles/010000000000100B");
+      rmdir("/titles/0100000000001001");
+      rmdir("/titles");
+//rmdir("/SdOut"); update 0.2 will unpack in to titles.
 
 //end cleanup ulaunch zip
 
@@ -216,6 +233,8 @@ int update_ebooks(char *url, char *output, int mode)
   	   remove(TITLE02);
     	 remove(TITLE03);
        remove(TITLE04);
+       remove(TITLE05);
+       remove(TITLE06);
        errorBox(400, 250, "Remove complete!\nRestart app to take effect");
 	    }
 
@@ -239,17 +258,26 @@ int update_amiibo(char *url, char *output, int mode)
 
             if (res == YES)
             {
-
+//Download Themes?
+//Pack01
     if (!downloadFile(HEKATE_URL, TEMP_FILE, OFF))
     {
 	rename(TEMP_FILE, HEKATE_OUTPUT);
-        unzip(HEKATE_OUTPUT, mode);
-          {
+  unzip(HEKATE_OUTPUT, mode);
+  {
+//Pack02
 	if (!downloadFile(THEME_URL2, TEMP_FILE, OFF))
   rename(TEMP_FILE, HEKATE_OUTPUT);
-        unzip(HEKATE_OUTPUT, mode);
-system("rm -rf /__MACOSX");
-rmdir("__MACOSX");
+  unzip(HEKATE_OUTPUT, mode);
+//Pack03
+  if (!downloadFile(THEME_URL3, TEMP_FILE, OFF))
+  rename(TEMP_FILE, HEKATE_OUTPUT);
+  unzip(HEKATE_OUTPUT, mode);
+//Pack04
+  if (!downloadFile(THEME_URL4, TEMP_FILE, OFF))
+  rename(TEMP_FILE, HEKATE_OUTPUT);
+  unzip(HEKATE_OUTPUT, mode);
+
                 }
                 return 0;
             }
@@ -271,26 +299,28 @@ void disable_app(char *url, char *output, int mode)
 
       if (res == YES)
       {
+        //The easiest way to disable uLaunch would be renaming its main file, exefs.nsp inside 0100000000001000 folder,
+        //inside your CFW's titles folder, to something like disabled.nsp (anything different will be enough).
+        //To re-enable it again, just rename it back to exefs.nsp.
+        rename("/atmosphere/titles/0100000000001000/exefs.nsp","/atmosphere/titles/0100000000001000/disabled.nsp");
+        errorBox(400, 250, "Disabled!\nReboot payload to take effect");
+        //Oldcode...
         //RENAME System application (SystemApplicationQHbTarget)
-        rename("/atmosphere/titles/01008BB00013C000","/atmosphere/titles/01008BB00013C000BAK");
+        //rename("/atmosphere/titles/01008BB00013C000","/atmosphere/titles/01008BB00013C000BAK");
         //RENAME QMenu (LibraryAppletQMenu)
-        rename("/atmosphere/titles/010000000000100B","/atmosphere/titles/010000000000100BBAK");
+        //rename("/atmosphere/titles/010000000000100B","/atmosphere/titles/010000000000100BBAK");
         //RENAME QDaemon (SystemAppletQDaemon)
         // create Backup folder otherwise blue atmosphere screen of death
-        mkdir("/atmosphere/titles/0100000000001000BAK", 0700);
-        rename("/atmosphere/titles/0100000000001000/exefs.nsp","/atmosphere/titles/0100000000001000BAK/exefs.nsp");
+        //mkdir("/atmosphere/titles/0100000000001000BAK", 0700);
         //RENAME Library applet (LibraryAppletQHbTarget)
-        rename("/atmosphere/titles/0100000000001001","/atmosphere/titles/0100000000001001BAK");
+        //rename("/atmosphere/titles/0100000000001001","/atmosphere/titles/0100000000001001BAK");
         //end copy uLauch
-        errorBox(400, 250, "Disabled!\nReboot payload to take effect");
-        {
 
+        {
 }
-//return 0;
-}
-//return 0;
-}
-}
+  }
+    }
+      }
 void Enable_app(char *url, char *output, int mode)
 {
   if (mode == OFFLINE_MODE)
@@ -301,17 +331,19 @@ void Enable_app(char *url, char *output, int mode)
 
           if (res == YES)
           {
-            rename("/atmosphere/titles/01008BB00013C000BAK","/atmosphere/titles/01008BB00013C000");
-            //RENAME QMenu (LibraryAppletQMenu)
-            rename("/atmosphere/titles/010000000000100BBAK","/atmosphere/titles/010000000000100B");
-            //RENAME QDaemon (SystemAppletQDaemon)
-            rename("/atmosphere/titles/0100000000001000BAK/exefs.nsp","/atmosphere/titles/0100000000001000/exefs.nsp");
-            //RENAME Library applet (LibraryAppletQHbTarget)
-            rename("/atmosphere/titles/0100000000001001BAK","/atmosphere/titles/0100000000001001");
-            //end copy uLauch
+            rename("/atmosphere/titles/0100000000001000/disabled.nsp","/atmosphere/titles/0100000000001000/exefs.nsp");
             errorBox(400, 250, "Enabled!\nReboot payload to take effect");
+            //Oldcode...
+            //rename("/atmosphere/titles/01008BB00013C000BAK","/atmosphere/titles/01008BB00013C000");
+            //RENAME QMenu (LibraryAppletQMenu)
+            //rename("/atmosphere/titles/010000000000100BBAK","/atmosphere/titles/010000000000100B");
+            //RENAME QDaemon (SystemAppletQDaemon)
+            //RENAME Library applet (LibraryAppletQHbTarget)
+            //rename("/atmosphere/titles/0100000000001001BAK","/atmosphere/titles/0100000000001001");
+            //end copy uLauch
+
           }
-//return 0;
+return 0;
         }
 
       }

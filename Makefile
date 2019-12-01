@@ -39,7 +39,7 @@ include $(DEVKITPRO)/libnx/switch_rules
 #---------------------------------------------------------------------------------
 APP_TITLE   := uLanch Update
 APP_AUTHOR  := Dcnigma
-APP_VERSION := 0.0.4
+APP_VERSION := 0.0.6
 
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build

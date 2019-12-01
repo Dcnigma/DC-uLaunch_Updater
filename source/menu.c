@@ -5,8 +5,8 @@
 #include "touch.h"
 #include "util.h"
 
-#define APP_VERSION "uLaunch Updater: 0.0.5"
-#define UL_VERSION "uLaunch version: 0.1"
+#define APP_VERSION "uLaunch Updater: 0.0.6"
+#define UL_VERSION "uLaunch version: 0.2"
 
 void refreshScreen()
 {
@@ -33,7 +33,7 @@ void printOptionList(int cursor)
 {
     refreshScreen();
 
-    char *option_list[]      = {    "Install uLaunch?", \
+    char *option_list[]      = {    "Install/Update uLaunch v 0.2 ?", \
                                     "De-Install uLaunch", \
                                     "Get uLaunch Themes-showcase (discord)", \
                                     "Disable or Enabled Offline mode", \
@@ -42,7 +42,7 @@ void printOptionList(int cursor)
 
     char *description_list[] = {    "Warning this is for Atmosphere!", \
                                     "De-Install uLaunch for Atmosphere!", \
-                                    "Get All Themes for uLaunch (Updated 11-17-19)", \
+                                    "Get All Themes for uLaunch (Updated 12-01-19)", \
                                     "Disable or Enabled Offline mode", \
                                     "Update app and removes old version", \
                                     "Reboots switch (recommended after updating or De-install)" };
@@ -106,6 +106,7 @@ int yesNoBox(int mode, int x, int y, char *question)
         u64 kDown = hidKeysDown(CONTROLLER_P1_AUTO);
         hidTouchRead(&touch, tch);
         touch_count = hidTouchCount();
+        if (kDown & KEY_PLUS) break; // break in order to return to hbmenu
 
         if (touch_count == 0) touch_lock = OFF;
 
@@ -118,6 +119,7 @@ int yesNoBox(int mode, int x, int y, char *question)
         if (kDown & KEY_B || res == NO)
             return NO;
     }
+     return 0;
 }
 
 void errorBox(int x, int y, char *errorText)
