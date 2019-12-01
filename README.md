@@ -3,6 +3,17 @@
 My first real useful homebrew app for the Nintendo Switch.  
 Click [here](https://youtu.be/uMz1vgSuQ2g) Video clip showing it in action.  
 
+## uLaunch 0.2 is here!
+### Time for updater 0.0.6!
+Needed to make a update for v 0.2 new download link.
+And test the update function, and yes it needed to be adjust. But its working fine now!
+Use the in app update function if you have it or download it from the release   
+<img src="Screenshots/s8.jpg" alt="drawing" width="400"/> <img src="Screenshots/s9.jpg" alt="drawing" width="400"/>  
+
+<img src="Screenshots/s10.jpg" alt="drawing" width="400"/> <img src="Screenshots/s11.jpg" alt="drawing" width="400"/>  
+
+Also updated the skins and no more MACOS__ folders!
+
 ## Added offline modes.
 Now you can Disable or Enable uLaunch without deleting it.  
 Title folders will be moved except for 0100000000001000 only the exefs.nsp file will be moved.
@@ -102,5 +113,5 @@ Only tested it on my Switch so I don't take responsibility if something happens 
 - Give names of references a logic name in the code.
 - Decide if will use a png icon or not.
 - Give propper credits to everyone in README.md
-- Clean up MACOS_ folders that are created by unzipping. (or upload only cleaned zips)
+- Clean up MACOS_ folders that are created by unzipping. (or upload only cleaned zips)  (fixed use clean zips).
 
