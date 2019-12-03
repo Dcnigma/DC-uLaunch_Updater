@@ -2,13 +2,15 @@
 #define _UTIL_H_
 
 #define ROOT                    "/"
-#define APP_PATH                "/switch/Ulaunch-update/"
+#define APP_PATH                "/switch/DC-uLaunch-update"
+#define OLDDER_APP_PATH         "/switch/uLaunch-update"
 #define AMS_OUTPUT              "/atmosphere/TitleUpdate.zip"
-#define HEKATE_OUTPUT           "/switch/Ulaunch-update/ulaunch-theme.zip"
-#define APP_OUTPUT              "/switch/Ulaunch-update/DC-uLaunch_Updater.nro"
+//Changed because of Fault in HB appstore.
+#define HEKATE_OUTPUT           "/switch/DC-uLaunch-update/ulaunch-theme.zip"
+#define APP_OUTPUT              "/switch/DC-uLaunch-update/DC-uLaunch_Updater.nro"
 #define OLD_APP_PATH            "/switch/DC-uLaunch_Updater.nro"
 //Remove ebook in clean up!
-#define EBOOK_OUTPUT		        "/switch/DC-Switch/ebook.zip"
+#define EBOOK_OUTPUT		        "/switch/DC-uLaunch-update/ebook.zip"
 #define BACKUP_OUTPUT           "/atmosphere/Title/"
 
 
@@ -31,5 +33,5 @@ int update_amiibo(char *url, char *output, int mode);               	  // update
 void disable_app();                                                     // disable_app ulaunch offline
 void Enable_app();                                                      // Enable_app ulaunch offline
 void update_app();                                                      // update the app
-
+void removeold_app();
 #endif

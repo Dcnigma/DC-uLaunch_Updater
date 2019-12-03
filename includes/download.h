@@ -11,7 +11,7 @@
 #define EBOOK_URL     "-"
 // App download location
 #define APP_URL     "https://github.com/Dcnigma/DC-uLaunch_Updater/raw/master/DC-uLaunch_Updater.nro"
-
+//#define APP_URL     "https://github.com/Dcnigma/DC-uLaunch_Updater/raw/master/HB-browser/DC-uLaunch_Updater.nro"
 // Define how to download 	if (!downloadFile(THEME_URL2, TEMP_FILE, OFF))
 int downloadFile(const char *url, const char *output, int api_mode);
 
