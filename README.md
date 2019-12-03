@@ -123,7 +123,8 @@ Only tested it on my Switch so I don't take responsibility if something happens 
 - Give propper credits to everyone in README.md
 - Clean up MACOS_ folders that are created by unzipping. (or upload only cleaned zips)  (fixed use clean zips).
 
-# Credits
-## Special Thanks!
- [totaljustice](https://github.com/ITotalJustice)for the initial version so I could make this!
+# Credits  .
+  
+## Special Thanks!  
+ [totaljustice](https://github.com/ITotalJustice) for the initial version so I could make this!
  
