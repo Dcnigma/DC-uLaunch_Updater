@@ -9,12 +9,14 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <dirent.h>// check dir
+#include <errno.h>// check dir
 //need ftw for switch :-D
 //#include <ftw.h>
 
-#define TEMP_FILE               "/switch/Ulaunch-update/temp.zip"
+#define TEMP_FILE               "/switch/DC-Ulaunch-update/temp.zip"
 #define FILTER_STRING           "browser_download_url\":\""
-#define MAC_OUTPUT		          "/__MACOSX/"
+
 //uLaunch
 //System application (SystemApplicationQHbTarget)
 #define TITLE01                 "/atmosphere/titles/01008BB00013C000/exefs.nsp"
@@ -343,9 +345,15 @@ void Enable_app(char *url, char *output, int mode)
             //end copy uLauch
 
           }
-return 0;
+return ;
         }
 
+      }
+      void removeold_app()
+      {
+        rename("/switch/uLaunch-update","/switch/uLaunch-update-old");
+        rmdir("/switch/uLaunch-update-old");
+        errorBox(400, 250, "OLD Install folder Renamed\n Please Update complete!\nRestart app to take effect");
       }
 
 void update_app()
@@ -353,14 +361,37 @@ void update_app()
     // download new nro as a tempfile.
     if (!downloadFile(APP_URL, TEMP_FILE, OFF))
     {
+      DIR* dir = opendir(OLDDER_APP_PATH);
+      if (dir)
+        {
+          /* Directory exists. */
+          remove("/switch/Ulaunch-update/DC-uLaunch_Updater.nro");
+          // remove nro from /switch/.
+          //rmdir("/switch/uLaunch-update");
+          // rename the downloaded temp_file with the correct nro name.
+          rename(TEMP_FILE, APP_OUTPUT);
+          closedir(dir);
+          remove(TEMP_FILE);
+          removeold_app();
+          }
+    else if (ENOENT == errno) {
+          remove(APP_OUTPUT);
+          rmdir("/switch/uLaunch-update-old");
+          // remove nro from /switch/.
+          //remove(OLD_APP_PATH);
+          rename(TEMP_FILE, APP_OUTPUT);  /* Directory does not exist. */
+          errorBox(400, 250, "Update complete!\nRestart app to take effect");
+          remove(TEMP_FILE);
+          sleep (3);
+
+          }
+    else {
+          rmdir("/switch/uLaunch-update-old");  /* opendir() failed for some other reason. */
+          }
         // remove current nro file.
-        remove(APP_OUTPUT);
-        // remove nro from /switch/.
-        remove(OLD_APP_PATH);
-        // rename the downloaded temp_file with the correct nro name.
-        rename(TEMP_FILE, APP_OUTPUT);
+
         // using errorBox as a message window on this occasion.
-        errorBox(400, 250, "Update complete!\nRestart app to take effect");
+
     }
 
 }
