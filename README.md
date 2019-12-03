@@ -126,5 +126,5 @@ Only tested it on my Switch so I don't take responsibility if something happens 
 # Credits  .
   
 ## Special Thanks!  
- [totaljustice](https://github.com/ITotalJustice) for the initial version so I could make this!
+ [ITotalJustice](https://github.com/ITotalJustice) for the initial version so I could make this!
  
