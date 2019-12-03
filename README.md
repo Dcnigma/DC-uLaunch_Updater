@@ -3,6 +3,14 @@
 My first real useful homebrew app for the Nintendo Switch.  
 Click [here](https://youtu.be/uMz1vgSuQ2g) Video clip showing it in action.  
 
+### Update Homebrew Appstore Added 0.0.6!
+<img src="Screenshots/s12.jpg" alt="drawing" width="400"/>   <img src="Screenshots/S13.jpg" alt="drawing" width="400"/>
+
+I added my app to the appstore but for some reason it will be installed in /switch/DC-Ulaunch-update and not in  Ulaunch-update. Like I suggested in the info.. Oh well!
+  
+Made a update that checks if its in Ulaunch-update, if so it will remove it and install in to /switch/DC-Ulaunch-update   
+Will use this location from now on. Just use the auto update function and it will fix it!
+
 ## uLaunch 0.2 is here!
 ### Time for updater 0.0.6!
 Needed to make a update for v 0.2 new download link.
