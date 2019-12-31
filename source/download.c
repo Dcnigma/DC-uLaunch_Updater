@@ -7,7 +7,7 @@
 #include "menu.h"
 #include "util.h"           // for ON / OFF defines.
 
-#define API_AGENT           "ITotalJustice"
+#define API_AGENT           "Dcnigma"
 #define DOWNLOAD_BAR_MAX    500
 
 struct MemoryStruct

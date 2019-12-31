@@ -2,15 +2,15 @@
 #define _UTIL_H_
 
 #define ROOT                    "/"
-#define APP_PATH                "/switch/DC-uLaunch-update"
-#define OLDDER_APP_PATH         "/switch/uLaunch-update"
+#define APP_PATH                "/switch/DC-uLaunch-updater"
+#define OLDDER_APP_PATH         "/switch/Ulaunch-update"
 #define AMS_OUTPUT              "/atmosphere/TitleUpdate.zip"
 //Changed because of Fault in HB appstore.
-#define HEKATE_OUTPUT           "/switch/DC-uLaunch-update/ulaunch-theme.zip"
-#define APP_OUTPUT              "/switch/DC-uLaunch-update/DC-uLaunch_Updater.nro"
+#define HEKATE_OUTPUT           "/switch/DC-uLaunch-updater/ulaunch-theme.zip"
+#define APP_OUTPUT              "/switch/DC-uLaunch-updater/DC-uLaunch_Updater.nro"
 #define OLD_APP_PATH            "/switch/DC-uLaunch_Updater.nro"
 //Remove ebook in clean up!
-#define EBOOK_OUTPUT		        "/switch/DC-uLaunch-update/ebook.zip"
+#define EBOOK_OUTPUT		        "/switch/DC-uLaunch-updater/ebook.zip"
 #define BACKUP_OUTPUT           "/atmosphere/Title/"
 
 

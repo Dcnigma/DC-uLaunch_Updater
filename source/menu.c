@@ -5,8 +5,8 @@
 #include "touch.h"
 #include "util.h"
 
-#define APP_VERSION "uLaunch Updater: 0.0.6"
-#define UL_VERSION "uLaunch version: 0.2"
+#define APP_VERSION "uLaunch Updater: 0.0.7"
+#define UL_VERSION "uLaunch version: 0.2.1"
 
 void refreshScreen()
 {
@@ -33,16 +33,16 @@ void printOptionList(int cursor)
 {
     refreshScreen();
 
-    char *option_list[]      = {    "Install/Update uLaunch v 0.2 ?", \
+    char *option_list[]      = {    "Install/Update uLaunch v 0.2.1 ?", \
                                     "De-Install uLaunch", \
-                                    "Get uLaunch Themes-showcase (discord)", \
+                                    "Get uLaunch Themes-showcase (Discord)", \
                                     "Disable or Enabled Offline mode", \
                                     "Update app", \
                                     "Reboot (reboot to payload)" };
 
-    char *description_list[] = {    "Warning this is for Atmosphere!", \
+    char *description_list[] = {    "Warning this is for Atmosphere 0.1.1 or 0.1.0!", \
                                     "De-Install uLaunch for Atmosphere!", \
-                                    "Get All Themes for uLaunch (Updated 12-01-19)", \
+                                    "Get All Discord Themes for uLaunch (Updated 12-31-19)", \
                                     "Disable or Enabled Offline mode", \
                                     "Update app and removes old version", \
                                     "Reboots switch (recommended after updating or De-install)" };

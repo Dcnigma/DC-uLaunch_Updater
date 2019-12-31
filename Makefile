@@ -37,11 +37,11 @@ include $(DEVKITPRO)/libnx/switch_rules
 #   of a homebrew executable (.nro). This is intended to be used for sysmodules.
 #   NACP building is skipped as well.
 #---------------------------------------------------------------------------------
-APP_TITLE   := uLanch Update
+APP_TITLE   := uLanch Updater and Remover
 APP_AUTHOR  := Dcnigma
-APP_VERSION := 0.0.6
+APP_VERSION := 0.0.7
 
-TARGET		:=	$(notdir $(CURDIR))
+TARGET		:=	DC-uLaunch-Updater
 BUILD		:=	build
 SOURCES		:=	source
 DATA		:=	data

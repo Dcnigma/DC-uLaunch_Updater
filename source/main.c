@@ -107,9 +107,10 @@ int main(int argc, char **argv)
             switch (cursor)
             {
             case UP_AMS:
-                if (yesNoBox(cursor, 390, 250, "Install uLaunch ver 0.1 (online)?") == YES)
+                if (yesNoBox(cursor, 390, 250, "Install uLaunch ver 0.2.1 (online)?") == YES)
                     update_dcapps(AMS_URL, AMS_OUTPUT, cursor);
                 break;
+                  
             //Ebookurl is empty not used.
             case UP_AMS_NOINI:
                 if (yesNoBox(cursor, 390, 250, "De-Install uLaunch?") == YES)

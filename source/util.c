@@ -14,22 +14,22 @@
 //need ftw for switch :-D
 //#include <ftw.h>
 
-#define TEMP_FILE               "/switch/DC-Ulaunch-update/temp.zip"
+#define TEMP_FILE               "/temp.zip"
 #define FILTER_STRING           "browser_download_url\":\""
 
 //uLaunch
 //System application (SystemApplicationQHbTarget)
-#define TITLE01                 "/atmosphere/titles/01008BB00013C000/exefs.nsp"
+#define TITLE01                 "/atmosphere/contents/01008BB00013C000/exefs.nsp"
 //QMenu (LibraryAppletQMenu)
-#define TITLE02                 "/atmosphere/titles/010000000000100B/exefs.nsp"
-#define TITLE05                 "/atmosphere/titles/010000000000100B/romfs.bin"
-#define TITLE06                 "/atmosphere/titles/010000000000100B/fsmitm.flag"
+#define TITLE02                 "/atmosphere/contents/010000000000100B/exefs.nsp"
+#define TITLE05                 "/ulaunch/bin/QMenu/romfs.bin"
+//#define TITLE06                 "/atmosphere/contents/010000000000100B/fsmitm.flag"
 //QDaemon (SystemAppletQDaemon)
-#define TITLE03                 "/atmosphere/titles/0100000000001000/exefs.nsp"
+#define TITLE03                 "/atmosphere/contents/0100000000001000/exefs.nsp"
 //Library applet (LibraryAppletQHbTarget)
 //Delete only the exefs.nsp file from 0100000000001000 directory
 //(if there is a romfs folder present it could be a normal HOME menu theme)
-#define TITLE04                 "/atmosphere/titles/0100000000001001/exefs.nsp"
+#define TITLE04                 "/atmosphere/contents/0100000000001001/exefs.nsp"
 char g_sysVersion[50];
 char g_amsVersion[50];
 
@@ -176,48 +176,10 @@ int update_dcapps(char *url, char *output, int mode)
       remove(TITLE03);
       remove(TITLE04);
       remove(TITLE05);
-      remove(TITLE06);
+      //remove(TITLE06);
 	    rename(TEMP_FILE, AMS_OUTPUT);
 // AMS_OUTPUT              "/atmosphere/TitleUpdate.zip"
       unzip(AMS_OUTPUT, mode);
-//  AMS_OUTPUTZIP    "/SdOut/titles/"
-    //copy uLauch
-//System application (SystemApplicationQHbTarget)
-      mkdir("/atmosphere/titles/01008BB00013C000", 0700);
-      rename("/titles/01008BB00013C000/exefs.nsp","/atmosphere/titles/01008BB00013C000/exefs.nsp");
-//QMenu (LibraryAppletQMenu)
-      mkdir("/atmosphere/titles/010000000000100B", 0700);
-      rename("/titles/010000000000100B/exefs.nsp","/atmosphere/titles/010000000000100B/exefs.nsp");
-      rename("/titles/010000000000100B/fsmitm.flag","/atmosphere/titles/010000000000100B/fsmitm.flag");
-      rename("/titles/010000000000100B/romfs.bin","/atmosphere/titles/010000000000100B/romfs.bin");
-//QDaemon (SystemAppletQDaemon)
-      mkdir("/atmosphere/titles/0100000000001000", 0700);
-      rename("/titles/0100000000001000/exefs.nsp","/atmosphere/titles/0100000000001000/exefs.nsp");
-//Library applet (LibraryAppletQHbTarget)
-      mkdir("/atmosphere/titles/0100000000001001", 0700);
-      rename("/titles/0100000000001001/exefs.nsp","/atmosphere/titles/0100000000001001/exefs.nsp");
-//end copy uLauch
-//cleanup content of zip (still manual)
-      remove("/titles/01008BB00013C000/exefs.nsp");
-      remove("/titles/0100000000001000/exefs.nsp");
-      remove("/titles/0100000000001001/exefs.nsp");
-      remove("/titles/010000000000100B/exefs.nsp");
-      remove("/titles/010000000000100B/fsmitm.flag");
-      remove("/titles/010000000000100B/romfs.bin");
-// Remove can't remove folders. (need to check NX-Shell how to do that)
-//FS_RemoveDirRecursive("/SdOut");
-//BOOL RemoveDirectory( LPCTSTR "/SdOut" );
-      system("rm -r /SdOut");
-      rmdir("/titles/0100000000001000");
-      rmdir("/titles/01008BB00013C000");
-      rmdir("/titles/010000000000100B");
-      rmdir("/titles/0100000000001001");
-      rmdir("/titles");
-//rmdir("/SdOut"); update 0.2 will unpack in to titles.
-
-//end cleanup ulaunch zip
-
-
 errorBox(400, 250, "Install/Update complete!\nRestart Payload to take effect");
 
 	             }
@@ -236,7 +198,7 @@ int update_ebooks(char *url, char *output, int mode)
     	 remove(TITLE03);
        remove(TITLE04);
        remove(TITLE05);
-       remove(TITLE06);
+       //remove(TITLE06);
        errorBox(400, 250, "Remove complete!\nRestart app to take effect");
 	    }
 
@@ -279,7 +241,10 @@ int update_amiibo(char *url, char *output, int mode)
   if (!downloadFile(THEME_URL4, TEMP_FILE, OFF))
   rename(TEMP_FILE, HEKATE_OUTPUT);
   unzip(HEKATE_OUTPUT, mode);
-
+  //Pack05
+    if (!downloadFile(THEME_URL5, TEMP_FILE, OFF))
+    rename(TEMP_FILE, HEKATE_OUTPUT);
+    unzip(HEKATE_OUTPUT, mode);
                 }
                 return 0;
             }
@@ -304,7 +269,7 @@ void disable_app(char *url, char *output, int mode)
         //The easiest way to disable uLaunch would be renaming its main file, exefs.nsp inside 0100000000001000 folder,
         //inside your CFW's titles folder, to something like disabled.nsp (anything different will be enough).
         //To re-enable it again, just rename it back to exefs.nsp.
-        rename("/atmosphere/titles/0100000000001000/exefs.nsp","/atmosphere/titles/0100000000001000/disabled.nsp");
+        rename("/atmosphere/contents/0100000000001000/exefs.nsp","/atmosphere/contents/0100000000001000/disabled.nsp");
         errorBox(400, 250, "Disabled!\nReboot payload to take effect");
         //Oldcode...
         //RENAME System application (SystemApplicationQHbTarget)
@@ -333,7 +298,7 @@ void Enable_app(char *url, char *output, int mode)
 
           if (res == YES)
           {
-            rename("/atmosphere/titles/0100000000001000/disabled.nsp","/atmosphere/titles/0100000000001000/exefs.nsp");
+            rename("/atmosphere/contents/0100000000001000/disabled.nsp","/atmosphere/contents/0100000000001000/exefs.nsp");
             errorBox(400, 250, "Enabled!\nReboot payload to take effect");
             //Oldcode...
             //rename("/atmosphere/titles/01008BB00013C000BAK","/atmosphere/titles/01008BB00013C000");
@@ -351,8 +316,8 @@ return ;
       }
       void removeold_app()
       {
-        rename("/switch/uLaunch-update","/switch/uLaunch-update-old");
-        rmdir("/switch/uLaunch-update-old");
+        rename("/switch/uLaunch-updater","/switch/uLaunch-updater-old");
+        rmdir("/switch/uLaunch-updater-old");
         errorBox(400, 250, "OLD Install folder Renamed\n Please Update complete!\nRestart app to take effect");
       }
 
@@ -365,7 +330,7 @@ void update_app()
       if (dir)
         {
           /* Directory exists. */
-          remove("/switch/Ulaunch-update/DC-uLaunch_Updater.nro");
+          remove("/switch/Ulaunch-updater/DC-uLaunch_Updater.nro");
           // remove nro from /switch/.
           //rmdir("/switch/uLaunch-update");
           // rename the downloaded temp_file with the correct nro name.
@@ -376,7 +341,7 @@ void update_app()
           }
     else if (ENOENT == errno) {
           remove(APP_OUTPUT);
-          rmdir("/switch/uLaunch-update-old");
+          rmdir("/switch/uLaunch-updater-old");
           // remove nro from /switch/.
           //remove(OLD_APP_PATH);
           rename(TEMP_FILE, APP_OUTPUT);  /* Directory does not exist. */
@@ -386,7 +351,7 @@ void update_app()
 
           }
     else {
-          rmdir("/switch/uLaunch-update-old");  /* opendir() failed for some other reason. */
+          rmdir("/switch/uLaunch-updater-old");  /* opendir() failed for some other reason. */
           }
         // remove current nro file.
 
